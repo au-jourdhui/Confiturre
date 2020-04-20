@@ -1,0 +1,118 @@
+﻿@{ 
+    var activeName = ViewBag.ActiveName ?? string.Empty;
+}
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@activeName | Confiturre</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Confiturre" />
+    <meta name="keywords" content="Confiturre" />
+    <meta name="author" content="au-jourdhui" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" href="~/css/icomoon.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <script src="~/js/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+
+    <header id="confiturre-header" role="banner">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="#" class="js-confiturre-nav-toggle confiturre-nav-toggle" data-toggle="collapse" data-target="#confiturre-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+                    <a class="navbar-brand" href="index.html">Confiturre</a>
+                </div>
+                <div id="confiturre-navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="@(activeName == "About" ? "active" : "")"><a href="@Url.Action("Index", "Home")"><span>About <span class="border"></span></span></a></li>
+                        <li class="@(activeName == "Portfolio" ? "active" : "")"><a href="@Url.Action("Portfolio", "Home")"><span>Portfolio <span class="border"></span></span></a></li>
+                        <li class="@(activeName == "News" ? "active" : "")"><a href="@Url.Action("News", "Home")"><span>News <span class="border"></span></span></a></li>
+                        <li class="@(activeName == "Contacts" ? "active" : "")"><a href="@Url.Action("Contacts", "Home")"><span>Contacts <span class="border"></span></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    @RenderBody()
+
+    <div class="confiturre-spacer confiturre-spacer-lg"></div>
+    <footer id="confiturre-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="confiturre-footer-widget">
+                        <h2 class="confiturre-footer-logo">Confiturre</h2>
+                        <blockquote>
+                            <p>Don't limit yourself. Many people limit themselves to what they think they can do. You can go as far as your mind lets you. What you believe, remember, you can achieve.</p>
+                            <cite class="text-primary">– Mary Kay Ash</cite>
+                        </blockquote>
+                    </div>
+                    <div class="confiturre-footer-widget">
+                        <ul class="confiturre-social">
+                            <li><a href="#"><i class="icon-facebook"></i></a></li>
+                            <li><a href="#"><i class="icon-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6">
+                    <div class="confiturre-footer-widget top-level">
+                        <h4 class="confiturre-footer-lead ">Company</h4>
+                        <ul>
+                            <li><a href="@Url.Action("Index", "Home")">About</a></li>
+                            <li><a href="@Url.Action("Contacts", "Home")">Contact</a></li>
+                            <li><a href="@Url.Action("News", "Home")">News</a></li>
+                            <li><a href="@Url.Action("Portfolio", "Home")">Portfolio</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="visible-sm-block clearfix"></div>
+                <div class="col-md-2 col-sm-6">
+                    <div class="confiturre-footer-widget top-level">
+                        <h4 class="confiturre-footer-lead">Principles</h4>
+                        <ul class="confiturre-list-check">
+                            <li><a>Best practices.</a></li>
+                            <li><a>Fresh ingredients.</a></li>
+                            <li><a>Non-stop cooking.</a></li>
+                            <li><a>Quality in every piece.</a></li>
+                            <li><a>World known compositions.</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6">
+                    <div class="confiturre-footer-widget top-level">
+                        <h4 class="confiturre-footer-lead ">Contacts</h4>
+                        <ul class="confiturre-list-check">
+                            <li><a href="tel:+380681234567">+48730858158</a></li>
+                            <li><a href="petitefille0910@gmail.com">petitefille0910@gmail.com</a></li>
+                            <li><a href="https://t.me/petitekat">t.me/petitekat</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row confiturre-row-padded confiturre-copyright">
+                <div class="col-md-5">
+                    <p><small>&copy; All Rights Reserved. <br>Designed by: <a href="https://github.com/au-jourdhui" target="_blank">au-jourdhui</a></small></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery.easing.1.3.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/jquery.waypoints.min.js"></script>
+    <script src="~/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/js/main.js"></script>
+</body>
+</html>

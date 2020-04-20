@@ -6,8 +6,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\elements.cshtml" />
+    <Content Remove="Views\index.cshtml" />
+    <Content Remove="Views\LeftSidebar.cshtml" />
+    <Content Remove="Views\RightSidebar.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Home\Contacts.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Portfolio.cshtml" />
+    <None Include="Views\Home\News.cshtml" />
   </ItemGroup>
 
 </Project>

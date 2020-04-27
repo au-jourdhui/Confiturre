@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Confiturre.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,15 +11,10 @@ namespace Confiturre.Controllers
             ViewBag.ActiveName = "About";
             return View();
         }
-        public IActionResult News()
-        {
-            ViewBag.ActiveName = "News";
-            return View();
-        }
-        public IActionResult Portfolio()
+        public IActionResult Portfolio(string name = "MokkoCake")
         {
             ViewBag.ActiveName = "Portfolio";
-            return View();
+            return View(name);
         }
         public IActionResult Contacts()
         {

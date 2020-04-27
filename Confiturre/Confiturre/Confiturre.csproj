@@ -21,8 +21,6 @@
   <ItemGroup>
     <None Include="Views\Home\Contacts.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
-    <None Include="Views\Home\Portfolio.cshtml" />
-    <None Include="Views\Home\News.cshtml" />
   </ItemGroup>
 
 </Project>

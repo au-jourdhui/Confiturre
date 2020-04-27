@@ -29,13 +29,12 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a href="#" class="js-confiturre-nav-toggle confiturre-nav-toggle" data-toggle="collapse" data-target="#confiturre-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-                    <a class="navbar-brand" href="index.html">Confiturre</a>
+                    <a class="navbar-brand" href="@Url.Action("Index", "Home")">Confiturre</a>
                 </div>
                 <div id="confiturre-navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="@(activeName == "About" ? "active" : "")"><a href="@Url.Action("Index", "Home")"><span>About <span class="border"></span></span></a></li>
                         <li class="@(activeName == "Portfolio" ? "active" : "")"><a href="@Url.Action("Portfolio", "Home")"><span>Portfolio <span class="border"></span></span></a></li>
-                        <li class="@(activeName == "News" ? "active" : "")"><a href="@Url.Action("News", "Home")"><span>News <span class="border"></span></span></a></li>
                         <li class="@(activeName == "Contacts" ? "active" : "")"><a href="@Url.Action("Contacts", "Home")"><span>Contacts <span class="border"></span></span></a></li>
                     </ul>
                 </div>
@@ -70,7 +69,6 @@
                         <ul>
                             <li><a href="@Url.Action("Index", "Home")">About</a></li>
                             <li><a href="@Url.Action("Contacts", "Home")">Contact</a></li>
-                            <li><a href="@Url.Action("News", "Home")">News</a></li>
                             <li><a href="@Url.Action("Portfolio", "Home")">Portfolio</a></li>
                         </ul>
                     </div>

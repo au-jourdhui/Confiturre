@@ -1,11 +1,18 @@
 ﻿using System;
+using System.Data;
 using Confiturre.Models;
+using Dapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace Confiturre.Controllers
 {
     public class HomeController : Controller
     {
+        IDbConnection _connection;
+
+        public HomeController(IDbConnection connection) => _connection = connection;
+
         public IActionResult Index()
         {
             ViewBag.ActiveName = "About";
@@ -41,7 +48,11 @@ namespace Confiturre.Controllers
                 {
                     throw new Exception("Message is required!");
                 }
-                success = true;
+
+                var sql = $"insert into dbo.Messages(Name, Email, Message) values ('{messageVM.Name}','{messageVM.Email}','{messageVM.Message}')";
+                var count = _connection.Execute(sql);
+
+                success = count > 0;
                 message = "Your message was successfully sent!";
             }
             catch (Exception ex)
@@ -52,5 +63,10 @@ namespace Confiturre.Controllers
             return Json(new { success, message });
         }
 
+        public override void OnActionExecuted(ActionExecutedContext context)
+        {
+            base.OnActionExecuted(context);
+            _connection.Dispose();
+        }
     }
 }

@@ -179,6 +179,44 @@
 			} , { offset: '80%' } );
 		}
 	};
+
+	var contactForm = function () {
+		var parent = $('#contact-form');
+		if (parent.length) {
+			var send = parent.find('input[type="button"]');
+			send.click(() => {
+				var name = parent.find('input[name="name"]');
+				var email = parent.find('input[name="email"]');
+				var message = parent.find('textarea[name="message"]');
+				$.ajax({
+					url: '/Home/SendMessage',
+					method: 'POST',
+					data: { name: name.val(), email: email.val(), message: message.val() },
+					success: function (data) {
+						let message = data.message || (data.success ? 'Successfully done!' : 'An unexpected error was occured!');
+						if (data.success) {
+							Swal.fire({
+								title: message,
+								icon: 'success',
+								backdrop: `
+								  rgba(0,0,123,0.4)
+								  url("/images/nyan-cat.gif")
+								  left top
+								  no-repeat
+								`
+							});
+						} else {
+							Swal.fire({
+								icon: 'error',
+								title: 'Error',
+								text: message,
+							})
+                        }
+					}
+				});
+			});
+		}
+    }
 	
 	$(function(){
 		burgerMenu();
@@ -187,5 +225,6 @@
 		featureIconsWayPoint();
 		productsWayPoint();
 		clientsWayPoint();
+		contactForm();
 	});
 }());

@@ -49,8 +49,8 @@ namespace Confiturre.Controllers
                     throw new Exception("Message is required!");
                 }
 
-                var sql = $"insert into dbo.Messages(Name, Email, Message) values ('{messageVM.Name}','{messageVM.Email}','{messageVM.Message}')";
-                var count = _connection.Execute(sql);
+                var sql = $"insert into dbo.Messages(Name, Email, Message) values ('@Name','@Email','@Message')";
+                var count = _connection.Execute(sql, new { messageVM.Name, messageVM.Email, messageVM.Message });
 
                 success = count > 0;
                 message = "Your message was successfully sent!";
